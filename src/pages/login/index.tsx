@@ -2,64 +2,7 @@ import { WalletOutlined, GoogleOutlined, InfoCircleOutlined, TwitchOutlined } fr
 import { Button, Card, Space, Typography } from 'antd';
 import styled from 'styled-components';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-// import { SuiClient, getFullnodeUrl } from "@mysten/sui/client";
-
-// import { decodeSuiPrivateKey } from "@mysten/sui/cryptography";
-// import { Ed25519Keypair } from "@mysten/sui/keypairs/ed25519";
-// import { Transaction } from "@mysten/sui/transactions";
-// import {
-//     genAddressSeed,
-//     generateNonce,
-//     generateRandomness,
-//     getExtendedEphemeralPublicKey,
-//     getZkLoginSignature,
-//     jwtToAddress,
-// } from "@mysten/zklogin";
-// import { NetworkName, makePolymediaUrl, requestSuiFromFaucet, shortenSuiAddress } from "@polymedia/suitcase-core";
-// import { LinkExternal, Modal, isLocalhost } from "@polymedia/suitcase-react";
-// import { jwtDecode } from "jwt-decode";
-// import { useEffect, useRef, useState } from "react";
-
-
-
-
-
-// const NETWORK: NetworkName = "devnet";
-// const MAX_EPOCH = 2; // keep ephemeral keys active for this many Sui epochs from now (1 epoch ~= 24h)
-
-// const suiClient = new SuiClient({
-//     url: getFullnodeUrl(NETWORK),
-// });
-
-// /* Session storage keys */
-
-// const setupDataKey = "zklogin-demo.setup";
-// const accountDataKey = "zklogin-demo.accounts";
-
-// /* Types */
-
-// type OpenIdProvider = "Google";
-
-// type SetupData = {
-//     provider: OpenIdProvider;
-//     maxEpoch: number;
-//     randomness: string;
-//     ephemeralPrivateKey: string;
-// };
-
-// type AccountData = {
-//     provider: OpenIdProvider;
-//     userAddr: string;
-//     zkProofs: any;
-//     ephemeralPrivateKey: string;
-//     userSalt: string;
-//     sub: string;
-//     aud: string;
-//     maxEpoch: number;
-// };
-
-
-
+import { theme } from '@/ultils/theme';
 
 const { Title, Text } = Typography;
 
@@ -68,19 +11,59 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: ${theme.spacing.paddingContainer};
     box-sizing: border-box;
+    background-color: ${theme.colors.bg};
 `;
 
 const StyledCard = styled(Card)`
     width: 100%;
     max-width: 400px;
-    background-color: #282828;
-    border-radius: 8px;
-    border-color: #404040;
+    background-color: ${theme.colors.black};
+    border-radius: ${theme.borderRadius.small};
+    border-color: ${theme.colors.purple};
 
     .ant-card-body {
-        padding: 30px;
+        padding: ${theme.spacing.paddingMed};
+    }
+
+    .app-title {
+        color: ${theme.colors.pink};
+        font-weight: ${theme.fontWeight.bold};
+    }
+
+    .ant-typography {
+        color: ${theme.colors.white};
+    }
+
+    .ant-btn-primary {
+        background-color: ${theme.colors.purple};
+        border-color: ${theme.colors.purple};
+        
+        &:hover {
+            background-color: ${theme.colors.pink};
+            border-color: ${theme.colors.pink};
+        }
+    }
+
+    .ant-btn-circle {
+        background-color: ${theme.colors.black};
+        border-color: ${theme.colors.purple};
+        color: ${theme.colors.white};
+
+        &:hover {
+            background-color: ${theme.colors.purple};
+            border-color: ${theme.colors.purple};
+            color: ${theme.colors.white};
+        }
+    }
+
+    a {
+        color: ${theme.colors.pink};
+        
+        &:hover {
+            color: ${theme.colors.purple};
+        }
     }
 `;
 

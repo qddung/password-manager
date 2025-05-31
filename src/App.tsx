@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
+import './styles/global.css';
 import 'antd/dist/reset.css';
-import Connect from './pages/connect';
+import Connect from './pages/login';
 import AuthGuard from './auth/AuthGuard';
+import DecentralizedDocumentPlatform from './pages/vaults';
 
 const router = createBrowserRouter([
   {
@@ -18,10 +19,8 @@ const router = createBrowserRouter([
     </AuthGuard>
   },
   {
-    path: '/wallet',
-    element: <AuthGuard isLogin={false}>
-      <div>wallet</div>
-    </AuthGuard>,
+    path: '/vault',
+    element: <DecentralizedDocumentPlatform />,
   }
 ]);
 

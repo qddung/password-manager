@@ -21,6 +21,7 @@ interface ThemeColors {
     purple: string,
     cream: string,
     grey: string,
+    grey1: string,
     transparentWhite: string,
     accessibleDarkGrey: string,
 }
@@ -52,6 +53,7 @@ export const theme = {
         purple: '#782cda',
         cream: '#f8b994',
         grey: '#e6e6e6',
+        grey1: '#4f2f5f',
         transparentWhite: '#ffffffde',
         accessibleDarkGrey: '#9b9b9b',
     },
